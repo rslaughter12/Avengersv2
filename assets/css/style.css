@@ -1,0 +1,119 @@
+.navbar-bg {
+    background-image: url("../images/marvel.jpg");
+    background-position: 0%;
+}
+.marvelPhotos {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    color: white;
+    margin-top: 425px;
+}
+.marvelLogo {
+    margin-left: 825px;
+}
+.field {
+    margin-left: 750px;
+}
+.box {
+    margin-left: 735px;
+    margin-top: 100px;
+}
+
+/* Orianna's CSS */
+/* Styled background of the page */
+body {
+    background: linear-gradient(gray 10%, white, black);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Added style to the first column 'character */
+.character {
+    text-shadow: 2px 2px 5px black;
+    color: black;
+    font-family: "rock Salt", "permanent Marker", sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    margin-top: 0px;
+}
+
+/* set style to the second and third column */
+.minibio,
+.movies{
+    text-decoration: underline;
+    text-shadow: 2px 2px 5px black;
+    color: #b89c9c;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 40px
+}
+
+/* Created a class 'card' for the first column */
+/* Styled the first column 'character' */
+.card {
+    border-radius: 4px;
+    box-shadow: 5px 5px 8px black;
+    padding: 16px;
+    background: linear-gradient( rgba(171, 160, 87, 0.28), white, gold);
+}
+
+/* Adjusted the description */
+/* set font size and color to user comfort */
+.second {
+    font-size: 20px;
+    color: black;
+}
+
+/* When hovering over the list:
+cursor change to 'grab' 
+color change and add text shadow */
+li:hover {
+    color: darkred;
+    text-shadow: 2px 2px 5px black;
+    cursor: grab;
+}
+
+/* Created a class 'two-columns' so that it would fill in the screen */
+.two-columns {
+    column-count: 2;
+    column-gap: 30px;
+    font-size: 20px;
+    color: rgb(107, 85, 85);
+    margin-left: 40px;
+    margin-right: 10px;
+    margin-bottom: 80px;
+  }
+  
+.introColumns {
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    .introColumns {
+      flex-direction: column;
+    }
+    .button {
+        margin-top: 5px;
+    }
+}
+
+.ui-autocomplete {
+    color: red !important;
+    /* -moz-border-radius: 15px;
+    border-radius: 15px; */
+    background-color: white;
+    width : fit-content;
+    z-index: 100 !important;
+}
+
+.ui-autocomplete div:hover {
+    /*when hovering an item:*/
+    background-color: #88b6de;
+}
+
+.dropdown-content p:hover {
+    background-color: #88b6de;
+    cursor: pointer;
+}

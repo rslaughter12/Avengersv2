@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="./assets/js/md5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'>
+    </script>
+    <title>Marvel - Character Information</title>
+</head>
+<body>
+    <!--Navbar Rosa's section-->
+    <nav class="navbar navbar-bg is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a href="index.html" class="home-button">
+            <img src="./assets/images/marvel_logo.svg_720.png" alt="home" style="max-height: 100px" class="py-2 px-3">
+          </a>
+        </div>
+        <div class="navbar-item ml-auto">
+          <div class="navbar-end">
+                <p class="control has-icon-centered">
+                  <input class="input" type="search" id="inputField" placeholder="search marvel characters">
+                </p>
+                <div class="control">
+                  <a class="button is-responsive is-danger" id="myButton">
+                    Search
+                  </a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-item ml-auto">
+          <div class="navbar-end">
+            <div class="dropdown">
+              <div class="dropdown-trigger">
+                  <button class="button is-danger ml-6" id="watchlist" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <buttom>Watchlist</buttom>
+                    <span class="icon is-normal is-danger">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+              </div>
+                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                  <div class="dropdown-content">
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <!-- Rosa's section ends -->
+    
+      <!--Column Section Ryan section-->
+      <!-- when done styling remove is hidden!!!! -->
+      <div class="introColumns is-mobile is-centered" id= "introColumns">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <img class="marvelLogoGif" src="https://media.tenor.com/JaV6dQCBxVcAAAAC/marvel-intro.gif" >
+              <p class="title">Welcome Fellow Avengers!</p>
+              <p class="subtitle">You are here because you wish to learn more about the characters, movies, and powers that the superheroes in the Marvel Universe has!</p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <img class="marvelLogoGif" src="https://media0.giphy.com/media/1qErVv5GVUac8uqBJU/giphy.gif?cid=6c09b952cc3aa853f981f55ac19c8c3ccd2e3a6e7c10dbc1&rid=giphy.gif&ct=g" >
+              <p class="title">How to search!</p>
+              <p class="subtitle">To learn more about a specific character, search their name in the search bar above (Ex: "Hulk"). If you don't know where to start, click on a character at the bottom of the page!  </p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <img class="marvelLogoGif" src="https://allears.net/wp-content/uploads/2020/10/avengers-gif.gif" >
+              <p class="title">Watchlist Feature!</p>
+              <p class="subtitle">If you find a movie that you would like to save to your future watchlist, click on it, and then click "add to watchlist" this will store it for you and your future reference!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Ryan section ends here -->
+
+      <!-- Orianna's section starts here -->
+      <div class="columns is-hidden" id="searchElements">  
+        <div class="column is-one-third">
+          <figure class="image is-128x128">
+              
+          </figure>
+          <img src="" alt="" id="character-img">
+      </div>
+        <div class="column is-half">
+            <div class="columns mt-1">
+                <div class="column has-border-white">
+                  <h1 class="character has-text-centered card" id="character-title">Character</h1>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                  <h1 class="minibio has-text-centered" id="bio">Mini Bio</h1>
+                  <p class="mt-2 has-text-justified" id="description"></p><br>
+                  <a class ="is-danger" href="" target="_blank" id="comicsLink"><b>Click here for the Comics!</b></a>
+                </div>
+            </div>
+            <div class="columns third">
+                <div class="column">
+                    <h1 class="movies has-text-centered">List of Movies</h1>
+                    <ol class="two-columns" id="movies">
+                      
+                    </ol>
+                </div>
+            </div>
+          </div>
+    </div>
+    <!--End of Orianna's work-->
+
+  <!-- modal-1 starts here -->
+  <div class="modal modal-1">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head has-background-link-light">
+          <p class="modal-card-title has-text-centered" id="movieTitle-1"></p>
+          <button class="delete" id="closeIcon-1" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="columns">
+            <div class="column is-half" id="poster-1"></div>
+            <div class="column is-half">
+              <h1><b>Plot:</b></h1>
+              <p class ='desc-1'></p><br>
+              <p class ='desc-1'></p><br>
+              <p class ='desc-1'></p><br>
+              <p class ='desc-1'></p><br>
+              <p class ='desc-1'></p>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" id="add-to-watchlist">Add to Watchlist</button>
+          <button class="button cancel-1">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  <!-- modal-1 ends here  -->
+
+  <!-- modal-2 starts here -->
+  <div class="modal modal-2">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head has-background-link-light">
+        <p class="modal-card-title has-text-centered" id="movieTitle-2"></p>
+        <button class="delete" id="closeIcon-2" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="columns">
+          <div class="column is-half" id="poster-2"></div>
+          <div class="column is-half">
+            <h1><b>Plot:</b></h1>
+            <p class ='desc-2'></p><br>
+            <p class ='desc-2'></p><br>
+            <p class ='desc-2'></p><br>
+            <p class ='desc-2'></p><br>
+            <p class ='desc-2'></p>
+          </div>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" id="remove-from-watchlist">Remove From Watchlist</button>
+        <button class="button cancel-2">Cancel</button>
+      </footer>
+    </div>
+  </div>
+  <!--modal-2 ends here  -->
+  <!-- modal-3 starts here -->
+  <div class="modal modal-3">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head has-background-info-light">
+        <p class="modal-card-title has-text-centered" id="error"></p>
+        <button class="delete" id="closeIcon-3" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p class="has-text-centered" id="note"></p>
+      </section>
+    </div>
+  </div>
+  <!-- modal-3 ends here -->
+
+  <div class="modal modal-4">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head has-background-info-light">
+        <p class="modal-card-title has-text-centered" id="error">Alert!</p>
+        <button class="delete" id="closeIcon-4" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p class="has-text-centered" id="modal-4-note"></p>
+      </section>
+    </div>
+  </div>
+
+<!--Melissa's footer / images create section to remain independent -->
+<footer>
+  <div class="columns">
+    <div class="column footer-img">
+      <figure class="image is-128x128 image is-square is-clickable ml-6 mt-5 ">
+        <img src="./assets/images/black-widow.png" data-character="black widow" onClick="clickCharacter(event); hideElements(); showElements()">
+      </figure>
+      <p class="title is-3 has-text-grey-light has-text-centered  ">Black Widow</p>
+    </div>
+    <div class="column footer-img">
+      <figure class="image is-128x128 image is-square is-clickable ml-6 mt-5">
+        <img src="./assets/images/hulk.png" data-character="hulk" onClick="clickCharacter(event); hideElements(); showElements()">
+      </figure>
+      <p class="title is-3 has-text-grey-light has-text-centered ">Hulk</p>
+    </div>
+    <div class="column footer-img">
+      <figure class="image is-128x128 image is-square is-clickable ml-6 mt-5">
+        <img src="./assets/images/iron-man.png" data-character="iron man" onClick="clickCharacter(event); hideElements(); showElements()">
+      </figure>
+      <p class="title is-3 has-text-grey-light has-text-centered ">Iron Man</p>
+    </div>
+    <div class="column footer-img">
+      <figure class="image is-128x128 image is-square is-clickable ml-6 mt-5">
+        <img src="./assets/images/captain-america.png" data-character="captain america" onClick="clickCharacter(event); hideElements(); showElements()">
+      </figure>
+      <p class="title is-3 has-text-grey-light has-text-centered ">Captain America</p>
+    </div>
+    <div class="column footer-img">
+      <figure class="image is-128x128 image is-square is-clickable ml-6 mt-5">
+        <img src="./assets/images/captain-marvel.png" data-character="captain marvel" onClick="clickCharacter(event); hideElements(); showElements()">
+      </figure>
+      <p class="title is-3 has-text-grey-light has-text-centered">Captain Marvel</p>
+    </div>
+    <div class="column footer-img">
+      <figure class="image is-128x128 image is-square is-clickable ml-6 mt-5">
+        <img src="./assets/images/spiderman.png" data-character="Spider-Man" onClick="clickCharacter(event); hideElements(); showElements()" >
+      </figure>
+      <p class="title is-3 has-text-grey-light has-text-centered">Spider-Man</p> 
+    </div>
+  </div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./assets/js/script.js"></script> 
+</body>
+</html>
